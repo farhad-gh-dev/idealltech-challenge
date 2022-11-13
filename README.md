@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+![project screenshot](https://github.com/farhad-gh-dev/code-challenge/blob/main/public/project-screenshot.jpg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+This project was a coding challenge.
 
-## Available Scripts
+## Start Guide
 
-In the project directory, you can run:
+First, install the dependencies:
 
-### `npm start`
+```bash
+npm run install
+# or
+yarn install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Then, run the development server:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+npm run start
+# or
+yarn start
+```
 
-### `npm test`
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech stack
 
-### `npm run build`
+React JS, Typescript, Material UI
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Folder Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- In order to scale the application in the easiest and most maintainable way, I keep most of the code inside the features folder, which should contain different feature-based things. The idea is that you should be able to add or remove a feature and all of it's specific dependencies in a folder in features directory. a feature will contain everything form api calls to sub-components(the ones only used for this feature) and local hooks. This will allow you to keep functionalities scoped to a feature and not mix its declarations with shared things.
+- In contrast we also have components directory (no included in this project) which we put our shared components and layouts inside of.
+- store directory keep our store hooks and store configuration + shared slices if there is any.
+- In test directory we have our test utilities and data-factories.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This was inspired by bulletproof-react repo in github.
 
-### `npm run eject`
+    .
+    ├─── public
+    └─── src
+        ├─── assets
+        ├─── features
+        ├─── store
+        └─── test
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Things That I Wanted To Work On More But DID NOT Have Enough Time For
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- First things first, this is the first time I've worked with websocket and cryptocurrencies. It was definitely challenging but I learned a lot and enjoyed the journey. That being said, the lack of clarification in the project description was a bit daunting. Also the usage of the mentioned package was not clear at all.That’s why I had to make some decisions regardless of the test specifications, such as managing each data stream on a different socket instead of using a single socket for multiple streams.
+- TEST! If I had more time I would add more tests, specifically for each row in the items table. I tried to implement this test but mocking the websocket was new to me, and with the time limitation in mind I decided to leave it out.
